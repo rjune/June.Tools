@@ -194,6 +194,7 @@ namespace June.Tools.Functional
             return func();
         }
 
+        [DebuggerStepThrough]
         public static Result<K> OnSuccess<T, K>(this Result<T> result, Func<T, K> func)
         {
             if (result.IsFailure)
@@ -314,6 +315,7 @@ namespace June.Tools.Functional
 
             return Result.Ok(func(result.Value));
         }
+
         [DebuggerStepThrough]
         public static Result Map<T>(this Result<T> result)
         {
